@@ -1,14 +1,11 @@
 package me.axiomme.firstPlugin;
 
-import io.papermc.paper.plugin.lifecycle.event.LifecycleEvent;
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
 import me.axiomme.firstPlugin.commands.*;
 import me.axiomme.firstPlugin.listeners.BasicCommandsEp5_listener;
 import me.axiomme.firstPlugin.listeners.EventsListenerEp3_Listener;
 import me.axiomme.firstPlugin.listeners.CancellingEventsEp4_Listener;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.Set;
 
 public final class FirstPlugin extends JavaPlugin {
 
@@ -29,10 +26,11 @@ public final class FirstPlugin extends JavaPlugin {
         getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, event -> {
             event.registrar().register(SpawnCommandTreeEp6.create());
             event.registrar().register(DayCommandEp6.create());
-            event.registrar().register(HealArgumebtsCommandEp7.create());
+            event.registrar().register(HealArgumentsCommandEp7.create());
             event.registrar().register(GlowCommandEp7.create());
             event.registrar().register(AnnounceCommandEp7.create());
             event.registrar().register(SetSpeedCommandEp7.create());
+            event.registrar().register(AdminCommandsEp8.AdminHealCommand());
         });
     }
 

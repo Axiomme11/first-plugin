@@ -5,3 +5,17 @@ main: me.axiomme.firstPlugin.FirstPlugin
 api-version: '26.2'
 load: POSTWORLD
 description: 'This is my first plugin ! by Axiomme FR !'
+permissions:
+  first-plugin.healbasic:
+    description: Allow a player to heal themself
+    default: op
+
+  first-plugin.admin:
+    description: Allow a player to change gamemode or heal someone.
+    default: op
+    children:
+      first-plugin.admin.heal: true
+      first-plugin.admin.heal.targets: true
+      first-plugin.admin.gamemode: true
+      first-plugin.admin.gamemode.gamemode: true
+      first-plugin.admin.gamemode.gamemode.targets: true

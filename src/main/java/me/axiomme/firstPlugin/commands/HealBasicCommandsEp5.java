@@ -5,6 +5,7 @@ import io.papermc.paper.command.brigadier.CommandSourceStack;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.entity.Player;
+import org.jspecify.annotations.Nullable;
 
 public class HealBasicCommandsEp5 implements BasicCommand {
     @Override
@@ -18,5 +19,10 @@ public class HealBasicCommandsEp5 implements BasicCommand {
         player.setFoodLevel(20);
         player.setSaturation(20);
         player.sendMessage(Component.text("You have been healed", NamedTextColor.GREEN));
+    }
+
+    @Override
+    public @Nullable String permission() {
+        return "first-plugin.healbasic";
     }
 }

@@ -9,9 +9,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.entity.Player;
 
-import javax.inject.Named;
-
-public class HealArgumebtsCommandEp7 {
+public class HealArgumentsCommandEp7 {
 
     public static LiteralCommandNode<CommandSourceStack> create() {
         return Commands.literal("heal").executes( context -> {
