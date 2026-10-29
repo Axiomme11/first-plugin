@@ -28,9 +28,9 @@ public final class FirstPlugin extends JavaPlugin {
             event.registrar().register(DayCommandEp6.create());
             event.registrar().register(HealArgumentsCommandEp7.create());
             event.registrar().register(GlowCommandEp7.create());
-            event.registrar().register(AnnounceCommandEp7.create());
             event.registrar().register(SetSpeedCommandEp7.create());
             event.registrar().register(AdminCommandsEp8.AdminHealCommand());
+            event.registrar().register(AnnounceCommandEp10.create());
         });
     }
 

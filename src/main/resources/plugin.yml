@@ -19,3 +19,7 @@ permissions:
       first-plugin.admin.gamemode: true
       first-plugin.admin.gamemode.gamemode: true
       first-plugin.admin.gamemode.gamemode.targets: true
+
+  first-plugin.announce:
+    description: Use for do an chat/actionebar/title announcement for players.
+    default: op
