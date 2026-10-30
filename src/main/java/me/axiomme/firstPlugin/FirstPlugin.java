@@ -2,9 +2,7 @@ package me.axiomme.firstPlugin;
 
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
 import me.axiomme.firstPlugin.commands.*;
-import me.axiomme.firstPlugin.listeners.BasicCommandsEp5_listener;
-import me.axiomme.firstPlugin.listeners.EventsListenerEp3_Listener;
-import me.axiomme.firstPlugin.listeners.CancellingEventsEp4_Listener;
+import me.axiomme.firstPlugin.listeners.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class FirstPlugin extends JavaPlugin {
@@ -32,6 +30,16 @@ public final class FirstPlugin extends JavaPlugin {
             event.registrar().register(AdminCommandsEp8.AdminHealCommand());
             event.registrar().register(AnnounceCommandEp10.create());
         });
+
+
+        saveDefaultConfig();
+        getConfig();
+        getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, event -> {
+            event.registrar().register(SnackCommandEp11.create(this));
+        });
+
+        getServer().getPluginManager().registerEvents(new JoinListenerEp11(this), this);
+        getServer().getPluginManager().registerEvents(new LaunchListenerEp13(this), this);
     }
 
     @Override
